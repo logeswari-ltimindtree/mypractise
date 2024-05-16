@@ -1,0 +1,10 @@
+public class MyBatch implements Database.Batchable<sObject>{
+    public DataBase.QueryLocator start(DataBase.BatchableContext bc){
+        string query='select id, name from account';
+        return Database.getqueryLocator(query);
+    }
+    public void execute(DataBase.BatchableContext bc, list<account> acc){
+        for(account a : acc){
+            a.name = a.name+'Updated';
+        }
+}
