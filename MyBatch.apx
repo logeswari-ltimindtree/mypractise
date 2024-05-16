@@ -7,4 +7,7 @@ public class MyBatch implements Database.Batchable<sObject>{
         for(account a : acc){
             a.name = a.name+'Updated';
         }
+    public void finish(DataBase.BatchableContext bc){
+        
+    }	
 }
